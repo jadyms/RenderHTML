@@ -6,6 +6,16 @@ app.get("/", function(req,res){
 	res.render("home.ejs")
 });
 
+app.get("/posts", function(req,res){
+	var posts = [
+		{title: "Corona Virus", author:"Cardi"},
+		{title: "It´s getting real", author:"B"}
+	]
+
+	res.render("posts.ejs", {posts: posts})
+});
+
+
 app.get("/favflower/:flower", function(req,res){
 	var flower = req.params.flower;
 	res.render("flower.ejs", {favFlower : flower});
